@@ -1,0 +1,11 @@
+{
+  "Name": "Nerdy Info Mod",
+  "ID": "nerdy info mod",
+  "Author": "Nerdy Info Mod contributors",
+  "Description": "nerdy info mod for cookie clicker :D",
+  "ModVersion": 1,
+  "GameVersion": 2.053,
+  "Date": "21/09/2026",
+  "Dependencies": [],
+  "AllowSteamAchievs": 1
+}
