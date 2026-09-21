@@ -5,6 +5,11 @@
 	var TARGET_VERSION = 2.053;
 	var MAX_PREDICTIONS = 20;
 	var DRAW_INTERVAL = 10;
+	var scriptBaseUrl = '';
+	if (typeof document !== 'undefined' && document.currentScript && document.currentScript.src) {
+		var scriptSlash = document.currentScript.src.lastIndexOf('/');
+		if (scriptSlash >= 0) scriptBaseUrl = document.currentScript.src.substring(0, scriptSlash + 1);
+	}
 	var FREEBIE_LIMIT = 15;
 	var state = {
 		button: null,
@@ -28,7 +33,7 @@
 	function getModAssetUrl(filename) {
 		var mod = Game.mods && Game.mods[MOD_ID];
 		var directory = mod && mod.dir;
-		if (!directory) return filename;
+		if (!directory) return scriptBaseUrl ? scriptBaseUrl + filename : filename;
 		return directory.replace(/\\/g, '/').replace(/\/+$/, '') + '/' + filename;
 	}
 
